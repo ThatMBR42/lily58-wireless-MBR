@@ -34,11 +34,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0         &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp F     &kp P     &kp B                             &kp J   &kp L      &kp U      &kp Y    &kp SEMICOLON  &kp MINUS
-&kp LEFT_SHIFT  &kp A   &kp R   &kp S     &kp T     &kp G                             &kp M   &kp N      &kp E      &kp I    &kp O          &kp APOS
-&kp LCTRL       &kp Z   &kp X   &kp C     &kp D     &kp V   &kp LBKT       &kp RBKT   &kp K   &kp H      &kp COMMA  &kp DOT  &kp FSLH       &kp RCTRL
-                                &kp LALT  &kp LGUI  &mo 1   &lt 3 ENTER    &kp SPACE  &mo 2   &kp LSHFT  &kp GRAVE
+&kp ESC         &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9   &kp N0         &kp BACKSPACE
+&kp TAB         &kp Q   &kp W   &kp F     &kp P     &kp B                           &kp J   &kp L      &kp U      &kp Y    &kp SEMICOLON  &kp MINUS
+&kp LEFT_SHIFT  &kp A   &kp R   &kp S     &kp T     &kp G                           &kp M   &kp N      &kp E      &kp I    &kp O          &kp APOS
+&kp LCTRL       &kp Z   &kp X   &kp C     &kp D     &kp V   &kp LBKT     &kp RBKT   &kp K   &kp H      &kp COMMA  &kp DOT  &kp FSLH       &kp RCTRL
+                                &kp LALT  &kp LGUI  &mo 1   &kp ENTER    &kp SPACE  &mo 2   &kp LSHFT  &kp GRAVE
             >;
         };
 
@@ -70,21 +70,21 @@
 
             display-name = "Raise";
             bindings = <
-&trans  &trans            &trans     &trans     &trans        &trans                        &trans  &trans    &trans     &trans     &trans     &trans
-&trans  &trans            &trans     &trans     &trans        &trans                        &trans  &trans    &trans     &trans     &trans     &trans
-&trans  &kp SINGLE_QUOTE  &kp DQT    &kp COMMA  &kp DOT       &kp DELETE                    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &kp SEMI          &kp COLON  &kp SLASH  &kp QUESTION  &kp INSERT  &trans    &trans  &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-                                     &trans     &trans        &trans      &trans    &trans  &trans  &trans    &trans
+&trans  &trans            &trans               &trans               &trans               &trans                                           &trans  &trans    &trans     &trans     &trans     &trans
+&trans  &trans            &kp LA(PRINTSCREEN)  &kp LS(PRINTSCREEN)  &kp LC(PRINTSCREEN)  &kp PRINTSCREEN                                  &trans  &trans    &trans     &trans     &trans     &trans
+&trans  &kp SINGLE_QUOTE  &kp DQT              &kp COMMA            &kp DOT              &kp DELETE                                       &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &kp SEMI          &kp COLON            &kp SLASH            &kp QUESTION         &kp INSERT       &kp SCROLLLOCK    &kp CAPSLOCK  &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+                                               &trans               &trans               &trans           &trans            &trans        &trans  &trans    &trans
             >;
         };
 
         tri_layer {
             bindings = <
-&trans  &trans     &trans         &trans         &trans     &trans                           &trans     &trans  &trans  &kp LPAR  &kp RPAR  &trans
-&trans  &trans     &kp LA(R)      &kp LA(S)      &kp LC(C)  &kp LC(LS(Y))                    &trans     &trans  &trans  &trans    &trans    &trans
-&trans  &kp LC(A)  &trans         &kp LA(LC(V))  &kp LC(V)  &trans                           &kp MINUS  &trans  &trans  &trans    &trans    &trans
-&trans  &trans     &kp LC(LS(Q))  &trans         &trans     &trans         &trans    &trans  &kp UNDER  &trans  &trans  &trans    &trans    &trans
-                                  &trans         &trans     &trans         &trans    &trans  &trans     &trans  &trans
+&trans  &trans     &trans         &trans         &trans     &trans                                  &trans     &trans     &trans            &kp LPAR           &kp RPAR  &trans
+&trans  &trans     &kp LA(R)      &kp LA(S)      &kp LC(C)  &kp LC(LS(Y))                           &trans     &trans     &kp LT            &kp GT             &trans    &trans
+&trans  &kp LC(A)  &trans         &kp LA(LC(V))  &kp LC(V)  &trans                                  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &trans
+&trans  &trans     &kp LC(LS(Q))  &trans         &trans     &trans         &kp LG(LS(S))    &trans  &kp UNDER  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans    &trans
+                                  &trans         &trans     &trans         &trans           &trans  &trans     &trans     &trans
             >;
 
             label = "Tri";
