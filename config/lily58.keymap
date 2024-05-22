@@ -71,7 +71,7 @@
             display-name = "Raise";
             bindings = <
 &trans  &kp EXCL          &kp AT               &kp HASH             &kp DOLLAR           &kp PERCENT                                      &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR   &kp RPAR   &trans
-&trans  &trans            &kp LA(PRINTSCREEN)  &kp LS(PRINTSCREEN)  &kp LC(PRINTSCREEN)  &kp PRINTSCREEN                                  &trans     &trans    &trans        &trans     &trans     &trans
+&trans  &trans            &kp LA(PRINTSCREEN)  &kp LS(PRINTSCREEN)  &kp LC(PRINTSCREEN)  &kp PRINTSCREEN                                  &trans     &trans    &trans        &trans     &trans     &kp BACKSLASH
 &trans  &kp SINGLE_QUOTE  &kp DQT              &kp COMMA            &kp DOT              &kp DELETE                                       &trans     &kp LEFT  &kp DOWN      &kp UP     &kp RIGHT  &trans
 &trans  &kp SEMI          &kp COLON            &kp SLASH            &kp QUESTION         &kp INSERT       &kp SCROLLLOCK    &kp CAPSLOCK  &trans     &kp HOME  &kp PG_DN     &kp PG_UP  &kp END    &trans
                                                &trans               &trans               &trans           &trans            &trans        &trans     &trans    &trans
@@ -81,7 +81,7 @@
         tri_layer {
             bindings = <
 &trans  &trans     &trans         &trans         &trans     &trans                                  &trans     &trans     &trans            &kp LPAR           &kp RPAR   &trans
-&trans  &trans     &kp LA(R)      &kp LA(S)      &kp LC(C)  &kp LC(LS(Y))                           &trans     &trans     &kp LT            &kp GT             &trans     &trans
+&trans  &trans     &kp LA(R)      &kp LA(S)      &kp LC(C)  &kp LC(LS(Y))                           &trans     &trans     &kp LT            &kp GT             &trans     &kp BACKSLASH
 &trans  &kp LC(A)  &trans         &kp LA(LC(V))  &kp LC(V)  &trans                                  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMI   &trans
 &trans  &trans     &kp LC(LS(Q))  &trans         &trans     &trans         &kp LG(LS(S))    &trans  &kp UNDER  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp COLON  &trans
                                   &trans         &trans     &trans         &trans           &trans  &trans     &trans     &trans
