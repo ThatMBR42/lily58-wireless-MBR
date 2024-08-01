@@ -21,6 +21,19 @@
         };
     };
 
+    behaviors {
+        hrm: hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -34,11 +47,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC         &kp N1          &kp N2          &kp N3            &kp N4              &kp N5                            &kp N6  &kp N7               &kp N8             &kp N9           &kp N0           &kp BACKSPACE
-&kp TAB         &kp Q           &kp W           &kp F             &kp P               &kp B                             &kp J   &kp L                &kp U              &kp Y            &kp SEMICOLON    &kp MINUS
-&kp LEFT_SHIFT  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt LEFT_CONTROL T  &kp G                             &kp M   &mt RIGHT_CONTROL N  &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_GUI O  &kp APOS
-&kp LCTRL       &kp Z           &kp X           &kp C             &kp D               &kp V   &kp LBKT       &kp RBKT   &kp K   &kp H                &kp COMMA          &kp DOT          &kp FSLH         &kp RCTRL
-                                                &kp LALT          &kp LEFT_GUI        &mo 1   &lt 3 ENTER    &kp SPACE  &mo 2   &kp DEL              &kp GRAVE
+&kp ESC         &kp N1           &kp N2           &kp N3             &kp N4               &kp N5                            &kp N6  &kp N7                &kp N8              &kp N9            &kp N0            &kp BACKSPACE
+&kp TAB         &kp Q            &kp W            &kp F              &kp P                &kp B                             &kp J   &kp L                 &kp U               &kp Y             &kp SEMICOLON     &kp MINUS
+&kp LEFT_SHIFT  &hrm LEFT_GUI A  &hrm LEFT_ALT R  &hrm LEFT_SHIFT S  &hrm LEFT_CONTROL T  &kp G                             &kp M   &hrm RIGHT_CONTROL N  &hrm RIGHT_SHIFT E  &hrm RIGHT_ALT I  &hrm RIGHT_GUI O  &kp APOS
+&kp LCTRL       &kp Z            &kp X            &kp C              &kp D                &kp V   &kp LBKT       &kp RBKT   &kp K   &kp H                 &kp COMMA           &kp DOT           &kp FSLH          &kp RCTRL
+                                                  &kp LALT           &kp LEFT_GUI         &mo 1   &lt 3 ENTER    &kp SPACE  &mo 2   &kp DEL               &kp GRAVE
             >;
         };
 
