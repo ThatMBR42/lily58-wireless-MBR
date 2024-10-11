@@ -131,11 +131,11 @@
 
             display-name = "Sym";
             bindings = <
-&trans  &kp EXCL          &kp AT               &kp HASH             &kp DOLLAR           &kp PERCENT                                      &kp CARET    &kp AMPS   &kp ASTERISK  &kp LPAR   &kp RPAR   &trans
-&trans  &trans            &kp LA(PRINTSCREEN)  &kp LS(PRINTSCREEN)  &kp LC(PRINTSCREEN)  &kp PRINTSCREEN                                  &trans       &kp EQUAL  &kp PLUS      &kp MINUS  &trans     &kp BACKSLASH
-&trans  &kp SINGLE_QUOTE  &kp DQT              &kp COMMA            &kp DOT              &kp DELETE                                       &key_repeat  &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT  &trans
-&trans  &kp SEMI          &kp COLON            &kp SLASH            &kp QUESTION         &kp INSERT       &kp SCROLLLOCK    &kp CAPSLOCK  &trans       &kp HOME   &kp PG_DN     &kp PG_UP  &kp END    &trans
-                                               &trans               &trans               &kp SPACE        &trans            &trans        &trans       &trans     &trans
+&trans  &kp EXCL          &kp AT     &kp HASH   &kp DOLLAR    &kp PERCENT                                      &kp CARET    &kp AMPS       &kp ASTERISK  &kp LPAR   &kp RPAR   &trans
+&trans  &kp GRAVE         &kp MINUS  &kp PLUS   &kp EQUAL     &kp PRINTSCREEN                                  &trans       &kp BACKSLASH  &kp PIPE      &kp MINUS  &trans     &trans
+&trans  &kp SINGLE_QUOTE  &kp DQT    &kp COMMA  &kp DOT       &kp DELETE                                       &key_repeat  &kp LEFT       &kp DOWN      &kp UP     &kp RIGHT  &trans
+&trans  &kp SEMI          &kp COLON  &kp SLASH  &kp QUESTION  &kp INSERT       &kp SCROLLLOCK    &kp CAPSLOCK  &kp GRAVE    &kp HOME       &kp PG_DN     &kp PG_UP  &kp END    &trans
+                                     &trans     &trans        &kp SPACE        &trans            &trans        &trans       &trans         &trans
             >;
         };
 
