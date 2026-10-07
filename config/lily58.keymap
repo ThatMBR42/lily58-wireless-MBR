@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -16,9 +17,21 @@
         win_l {
             bindings = <&kp RG(L)>;
             key-positions = <23 22>;
-            layers = <0>;
+            layers = <0 1 2>;
             require-prior-idle-ms = <500>;
             timeout-ms = <250>;
+        };
+
+        tog_hrm {
+            bindings = <&tog 1>;
+            key-positions = <49 36>;
+            layers = <0 1>;
+        };
+
+        tog_gall {
+            bindings = <&tog 2>;
+            key-positions = <52 55>;
+            layers = <0 1 2>;
         };
     };
 
@@ -99,18 +112,36 @@
 &kp TAB         &kp Q            &kp W            &kp F                 &kp P                   &kp B                             &kp J   &kp L                    &kp U                  &kp Y             &kp SEMICOLON     &kp MINUS
 &kp LEFT_SHIFT  &hrm LEFT_GUI A  &hrm LEFT_ALT R  &tp_hrm LEFT_SHIFT S  &tp_hrm LEFT_CONTROL T  &kp G                             &kp M   &tp_hrm RIGHT_CONTROL N  &tp_hrm RIGHT_SHIFT E  &hrm RIGHT_ALT I  &hrm RIGHT_GUI O  &kp APOS
 &kp LCTRL       &kp Z            &kp X            &kp C                 &kp D                   &kp V   &kp LBKT       &kp RBKT   &kp K   &kp H                    &kp COMMA              &kp DOT           &kp FSLH          &kp RCTRL
-                                                  &kp LALT              &kp LEFT_GUI            &mo 1   &lt 3 ENTER    &kp SPACE  &mo 2   &key_repeat              &kp GRAVE
+                                                  &kp LALT              &kp LEFT_GUI            &mo 3   &lt 5 ENTER    &kp SPACE  &mo 4   &key_repeat              &kp GRAVE
             >;
         };
 
-        num_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
+        no_hrm {
+            display-name = "Base";
+            bindings = <
+&kp ESC         &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                         &kp N6  &kp N7       &kp N8     &kp N9   &kp N0         &kp BACKSPACE
+&kp TAB         &kp Q   &kp W   &kp F     &kp P         &kp B                          &kp J   &kp L        &kp U      &kp Y    &kp SEMICOLON  &kp MINUS
+&kp LEFT_SHIFT  &kp A   &kp R   &kp S     &kp T         &kp G                          &kp M   &kp N        &kp E      &kp I    &kp O          &tp_hrm RSHFT SQT
+&kp LCTRL       &kp Z   &kp X   &kp C     &kp D         &kp V   &kp LBKT    &kp RBKT   &kp K   &kp H        &kp COMMA  &kp DOT  &kp FSLH       &kp RCTRL
+                                &kp LALT  &kp LEFT_GUI  &trans  &trans      &kp SPACE  &trans  &key_repeat  &kp GRAVE
+            >;
 
+            label = "NoHRM";
+        };
+
+        gall_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans    &trans    &trans     &trans
+&trans  &kp B   &kp L   &kp D   &kp C   &kp V                     &kp J   &kp Y   &kp O     &kp U     &kp COMMA  &trans
+&trans  &kp N   &kp R   &kp T   &kp S   &kp G                     &kp P   &kp H   &kp A     &kp E     &kp I      &tp_hrm RSHFT SLASH
+&trans  &kp X   &kp Q   &kp M   &kp W   &kp Z   &trans    &trans  &kp K   &kp F   &kp APOS  &kp SEMI  &kp DOT    &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+
+            label = "Gallium";
+        };
+
+        num_layer {
             display-name = "Num";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &kp KP_NUMLOCK  &trans     &kp KP_SLASH  &kp KP_ASTERISK  &trans        &kp BACKSPACE
@@ -119,36 +150,32 @@
 &trans      &kp F9        &kp F10       &kp F11       &kp F12       &kp COLON      &kp DEL    &trans  &kp UNDER       &kp KP_N1  &kp KP_N2     &kp KP_N3        &kp KP_ENTER  &trans
                                         &trans        &trans        &trans         &trans     &trans  &kp KP_N0       &trans     &kp KP_DOT
             >;
+
+            label = "Num";
         };
 
         sym_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
-
             display-name = "Sym";
             bindings = <
 &trans  &kp EXCL          &kp AT     &kp HASH   &kp DOLLAR    &kp PERCENT                                      &kp CARET    &kp AMPS       &kp ASTERISK  &kp LPAR   &kp RPAR   &trans
-&trans  &kp GRAVE         &kp MINUS  &kp PLUS   &kp EQUAL     &kp PRINTSCREEN                                  &trans       &kp BACKSLASH  &kp PIPE      &kp MINUS  &trans     &trans
+&trans  &kp GRAVE         &kp MINUS  &kp EQUAL  &kp PLUS      &kp PRINTSCREEN                                  &trans       &kp BACKSLASH  &kp PIPE      &kp MINUS  &trans     &trans
 &trans  &kp SINGLE_QUOTE  &kp DQT    &kp COMMA  &kp DOT       &kp DELETE                                       &key_repeat  &kp LEFT       &kp DOWN      &kp UP     &kp RIGHT  &trans
 &trans  &kp SEMI          &kp COLON  &kp SLASH  &kp QUESTION  &kp INSERT       &kp SCROLLLOCK    &kp CAPSLOCK  &kp GRAVE    &kp HOME       &kp PG_DN     &kp PG_UP  &kp END    &trans
                                      &trans     &trans        &kp SPACE        &trans            &trans        &trans       &trans         &trans
             >;
+
+            label = "Sym";
         };
 
         tri_layer {
+            label = "Tri";
             bindings = <
 &trans  &trans     &trans         &trans         &trans     &trans                                  &trans     &trans     &trans            &kp LPAR           &kp RPAR   &trans
-&trans  &trans     &kp LA(R)      &kp LA(S)      &kp LC(C)  &kp LC(LS(Y))                           &trans     &trans     &kp LT            &kp GT             &trans     &kp BACKSLASH
-&trans  &kp LC(A)  &kp Y          &kp LA(LC(V))  &kp LC(V)  &kp N                                   &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMI   &trans
-&trans  &mkp MCLK  &kp LC(LS(Q))  &mkp RCLK      &mkp LCLK  &trans         &kp LG(LS(S))    &trans  &kp UNDER  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp COLON  &trans
+&trans  &trans     &kp LA(R)      &kp LA(S)      &kp LC(C)  &kp LC(LS(Y))                           &trans     &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans     &kp BACKSLASH
+&trans  &kp LC(A)  &kp Y          &kp LA(LC(V))  &kp LC(V)  &kp N                                   &kp TILDE  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMI   &trans
+&trans  &mkp MCLK  &kp LC(LS(Q))  &mkp RCLK      &mkp LCLK  &trans         &kp LG(LS(S))    &trans  &kp UNDER  &kp MINUS  &kp LT            &kp GT             &kp COLON  &trans
                                   &trans         &trans     &trans         &trans           &trans  &trans     &trans     &trans
             >;
-
-            label = "Tri";
         };
     };
 
